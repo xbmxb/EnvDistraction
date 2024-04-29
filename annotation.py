@@ -9,11 +9,11 @@ from bs4 import BeautifulSoup
 from zhipuai import ZhipuAI
 from openai import OpenAI
 from prompts import overview, distractors, rewrite
-api_key = "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"
+api_key = ""
 
 def call_api(api='openai', prompt = ''):
     if api == 'zp':
-        client = ZhipuAI(api_key="1c3d05f2c36b6baf3657418f04d8b2fd.jUaotVKj6jLLJtVu") 
+        client = ZhipuAI(api_key="") 
         # print(prompt)
         response = client.chat.completions.create(
         # model="gpt-4-turbo",
@@ -157,7 +157,7 @@ def mmagent(output_path, results_path, api='zp', model ='glm-4v', role='a helpfu
             client = OpenAI(api_key = api_key)
         elif api == 'zp':
             content_image = {"type": "image_url", "image_url": {"url": f"{encoded_images}"}} # glm-4v
-            client = ZhipuAI(api_key="1c3d05f2c36b6baf3657418f04d8b2fd.jUaotVKj6jLLJtVu") 
+            client = ZhipuAI(api_key="") 
         # images = ['19.png']
         # encoded_images = [resize_encode_image(os.path.join(image_dir, img)) for img in images]
         # content_image = {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encoded_images[0]}"}} # gpt-4v
