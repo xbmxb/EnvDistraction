@@ -24,8 +24,8 @@ import google.generativeai as genai
 from agent_prompts import cot_non_loc, cot_non_loc_google_cate
 
 MATCH_F1 = 0.6
-api_key = "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"
-dashscope.api_key="sk-f41587e94eba4ac192ea3ec6cfba5944"
+api_key = "sk- "
+dashscope.api_key="sk- "
 IGNORE_OUT = [
     ('aria-label=', ''), ('<', ''), ('>', ''), ('click', ''), ('Button ', ''), ('button ', ''), ('Locate ', ''), (' it', ''),('\\', ''), ('type_text',''), ('input field', ''), ('Input field', '')
 ]
@@ -97,10 +97,10 @@ def remove_leading_zeros(number_str):
 #     if args.api == 'openai':
 #         client = OpenAI(api_key = api_key)
 #     elif args.api == 'zp':
-#         client = ZhipuAI(api_key="1c3d05f2c36b6baf3657418f04d8b2fd.jUaotVKj6jLLJtVu")
+#         client = ZhipuAI(api_key=" ")
 #     elif args.api == 'gemini':
 #         client = genai.GenerativeModel(args.model)
-#         genai.configure(api_key='AIzaSyCIRgHqVlK_apnFKywgsRecNK13BR8dllE')
+#         genai.configure(api_key=' ')
 #     elif args.api == 'qwen' or args.api == 'cogagent' or args.api == 'llava' or args.api == 'autoui' or args.api == 'seeclick'or args.api == 'fuyu' or args.api == 'minicpm':
 #         client = Client(f"http://{args.host}:{args.port}/")
 #         # client = Client(f"http://127.0.0.1:7860")

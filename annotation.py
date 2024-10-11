@@ -21,11 +21,11 @@ from amazon_products import AmazonData
 from retrieval import do_ret
 from autorepyly import auto_utter
 from baichuan import gpt_completion_helper
-api_key = "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"
+api_key = " "
 
 def call_api(api='zp', model= 'glm-4', content = '', generation_args = {}):
     if api == 'zp':
-        client = ZhipuAI(api_key="1c3d05f2c36b6baf3657418f04d8b2fd.jUaotVKj6jLLJtVu") 
+        client = ZhipuAI(api_key=" ") 
         response = client.chat.completions.create(
         model = model,
         messages=[{"role": "user", "content": content,}],
@@ -73,8 +73,8 @@ def call_robot(path, save_img):
 
 def call_robot_with_login_for_chatting_token(save_img, try_times= 5):
     # Set the Discord token
-    # token = 'MTI0NTM5MTMxMTkwNTc1MTA2MA.Gwl2Vb.mvzxZLGshzWjv8gk85Q9hOecXJWCdxQp3zPRmQ'
-    token = 'MTI0NTM5MTMxMTkwNTc1MTA2MA.GxrmVo.xtpKn1xUlgZn0S7rgnypJcbvwvdJVqLb6Dqe8A'
+    # token = ' '
+    token = ' '
 
     # Configure Chrome WebDriver options
     chrome_options = Options()
@@ -89,7 +89,7 @@ def call_robot_with_login_for_chatting_token(save_img, try_times= 5):
         try:
             # Open Discord login page
             # driver.get("https://discord.com/login")
-            driver.get('https://discord.com/channels/1245581080711397516/1245581080711397519')
+            driver.get(' ')
             # Inject token using JavaScript
             script = f"""
                 const token = "{token}";
@@ -109,7 +109,7 @@ def call_robot_with_login_for_chatting_token(save_img, try_times= 5):
             if "discord.com/app" in driver.current_url or "discord.com/channels" in driver.current_url:
                 print("[+] Login Successful")
                 time.sleep(3)
-                driver.get('https://discord.com/channels/1245581080711397516/1245581080711397519')
+                driver.get(' ')
                 # driver.maximize_window()
                 time.sleep(10)
                 driver.save_screenshot(save_img)
@@ -135,14 +135,14 @@ def call_robot_with_login_for_chatting(save_img, try_times = 5):
     # driver = webdriver.Chrome(service=service)
     driver = webdriver.Chrome(service=service, options=chrome_options)
     # Open the local HTML file in Chrome
-    username = "maxinbei620@gmail.com"
-    password = "charles692"
+    username = ""
+    password = ""
     # head to github login page
     while 1:
         if try_times < 0:
             break
         try:
-            driver.get('https://discord.com/channels/1245581080711397516/1245581080711397519')
+            driver.get(' ')
             time.sleep(5)
             driver.find_element(By.NAME, 'email').send_keys(username)
             driver.find_element(By.NAME, 'password').send_keys(password)
@@ -162,7 +162,7 @@ def call_robot_with_login_for_chatting(save_img, try_times = 5):
             else:
                 print("[+] Login su")
                 # time.sleep(3)
-                # driver.get('https://discord.com/channels/1245581080711397516/1245581080711397519')
+                # driver.get(' ')
                 # driver.maximize_window()
                 time.sleep(10)
                 driver.save_screenshot(save_img)
